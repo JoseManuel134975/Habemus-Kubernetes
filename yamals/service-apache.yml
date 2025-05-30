@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apache-service
+  labels:
+    app: apache
+spec:
+  type: LoadBalancer
+  selector:
+    app: apache
+  ports:
+    - protocol: TCP
+      port: 443         # Puerto expuesto públicamente
+      targetPort: 443   # Puerto del contenedor (containerPort)
